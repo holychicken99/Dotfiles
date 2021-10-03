@@ -9,18 +9,30 @@ Dotfiles are the customization files (their filenames usually begin with a perio
 
 
 ## Screenshots
-### Abyss
+<details open>
+<summary> <strong><font size="+2"> Abyss </font></strong/></summary>
+<br>
+
 
 - ![App Screenshot](./themes/abyss/1.png)
 - ![App Screenshot](./themes/abyss/2.png)
 - ![App Screenshot](./themes/abyss/3.png)
 - ![App Screenshot](./themes/abyss/4.png)
-
+</details>
 -----
-#### Otaku Life
+<details open>
+<summary> <strong><font size="+2"> Otaku Life </font></strong/></summary>
+<br>
+
+
+
+
+
 - ![App Screenshot](/themes/otaku_life/1.png)
 - ![App Screenshot](/themes/otaku_life/2.png)
 - ![App Screenshot](/themes/otaku_life/3.png)
+
+</details>
 
  ------
 
@@ -35,10 +47,7 @@ Dotfiles are the customization files (their filenames usually begin with a perio
 8. Network-manager ` Dmenu-network`
 9. Audio-manager `Pulse-Audio`
 ---
-* Os used here `Garuda-Linux`
-
-
-
+* Distro    `Garuda-Linux`
 
 ---
 ## Installation
