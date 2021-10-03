@@ -15,11 +15,15 @@ Dotfiles are the customization files (their filenames usually begin with a perio
 
 
 - ![App Screenshot](./themes/abyss/1.png)
+
 - ![App Screenshot](./themes/abyss/2.png)
 - ![App Screenshot](./themes/abyss/3.png)
 - ![App Screenshot](./themes/abyss/4.png)
 </details>
------
+
+
+
+
 <details open>
 <summary> <strong><font size="+2"> Otaku Life </font></strong/></summary>
 <br>
