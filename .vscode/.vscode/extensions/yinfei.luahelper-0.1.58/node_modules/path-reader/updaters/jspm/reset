@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+const packPath = require.resolve('../../package.json')
+const pack = require(packPath)
+const fs = require('fs')
+const path = require('path')
+const jsPackPath = path.join(packPath,'../','jspm_packages')
+const jsConfigPath = path.join(packPath,'../','jspm.config.js')
+
+if(pack.jspm){
+  delete pack.jspm.peerDependencies
+  delete pack.jspm.overrides
+}
+
+fs.writeFileSync(packPath, JSON.stringify(pack, null, 2))
+
+if(fs.existsSync(jsConfigPath)){
+  fs.unlink(jsConfigPath) 
+}
+
+deleteFolderRecursive(jsPackPath)
+
+function deleteFolderRecursive(path) {
+  if( !fs.existsSync(path) )return;
+
+  fs.readdirSync(path).forEach(function(file,index){
+    var curPath = path + "/" + file;
+    if(fs.lstatSync(curPath).isDirectory()) { // recurse
+      deleteFolderRecursive(curPath);
+    }else{ // delete file
+      fs.unlinkSync(curPath);
+    }
+  });
+  fs.rmdirSync(path);
+}

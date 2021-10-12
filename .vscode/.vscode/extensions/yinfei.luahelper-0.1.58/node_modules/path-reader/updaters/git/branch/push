@@ -1,0 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../../
+echo -n "Enter branch name to PUSH [ENTER]: "
+read name
+git push origin "$name"
+bash

@@ -1,0 +1,33 @@
+{
+	"name": "@vscode/dev-container-cli",
+	"version": "0.1.0",
+	"description": "Command Line Interface (CLI) for VS Code Dev Containers",
+	"bin": {
+		"devcontainer": "cli.js"
+	},
+	"author": "Microsoft Corporation",
+	"homepage": "https://code.visualstudio.com/docs/remote/devcontainer-cli",
+	"bugs": {
+		"url": "https://github.com/microsoft/vscode-remote-release/issues/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/microsoft/vscode-remote-release.git"
+	},
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"keywords": [
+		"vscode",
+		"vs-code",
+		"vs code",
+		"visual studio code",
+		"dev container cli",
+		"devcontainer-cli"
+	],
+	"engines": {
+		"node": ">=12.18.3"
+	},
+	"devDependencies": {
+	},
+	"dependencies": {
+	}
+}

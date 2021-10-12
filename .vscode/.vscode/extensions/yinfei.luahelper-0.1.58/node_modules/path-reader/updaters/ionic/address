@@ -1,0 +1,6 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../
+echo  "ionic address"
+ionic address
+bash

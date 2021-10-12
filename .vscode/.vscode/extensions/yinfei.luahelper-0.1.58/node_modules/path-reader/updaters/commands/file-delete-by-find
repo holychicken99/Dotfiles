@@ -1,0 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../
+echo -n "Delete files by find: "
+read name
+find ./ -name "$name" -type f -delete
+bash

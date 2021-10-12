@@ -1,0 +1,162 @@
+{
+	"name": "shell-launcher",
+	"displayName": "Shell launcher",
+	"description": "Easily launch multiple shell configurations in the terminal",
+	"version": "0.4.1",
+	"publisher": "Tyriar",
+	"icon": "images/icon.png",
+	"bugs": {
+		"url": "https://github.com/Tyriar/vscode-shell-launcher/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Tyriar/vscode-shell-launcher"
+	},
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:shellLauncher.launch"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "shellLauncher.launch",
+				"title": "Shell Launcher: Launch"
+			}
+		],
+		"configuration": {
+			"title": "Shell Launcher configuration",
+			"properties": {
+				"shellLauncher.shells.osx": {
+					"type": "array",
+					"description": "A list of shell configurations for macOS",
+					"default": [
+						{
+							"shell": "/bin/bash",
+							"label": "bash"
+						},
+						{
+							"shell": "/bin/zsh",
+							"label": "zsh"
+						},
+						{
+							"shell": "zsh",
+							"args": [
+								"-l"
+							],
+							"label": "zsh login shell"
+						},
+						{
+							"shell": "bash",
+							"args": [
+								"-l"
+							],
+							"label": "bash login shell"
+						}
+					],
+					"items": {
+						"shell": "string",
+						"args": "string[]",
+						"label": "string",
+						"launchName": "string",
+						"cwd": "string",
+						"env": "string[]"
+					}
+				},
+				"shellLauncher.shells.linux": {
+					"type": "array",
+					"description": "A list of shell configurations for Linux",
+					"default": [
+						{
+							"shell": "/bin/bash",
+							"label": "bash"
+						},
+						{
+							"shell": "/bin/zsh",
+							"label": "zsh"
+						},
+						{
+							"shell": "zsh",
+							"args": [
+								"-l"
+							],
+							"label": "zsh login shell"
+						},
+						{
+							"shell": "bash",
+							"args": [
+								"-l"
+							],
+							"label": "bash login shell"
+						}
+					],
+					"items": {
+						"shell": "string",
+						"args": "string[]",
+						"label": "string",
+						"launchName": "string",
+						"cwd": "string",
+						"env": "string[]"
+					}
+				},
+				"shellLauncher.shells.windows": {
+					"type": "array",
+					"description": "A list of shell configurations for Windows",
+					"default": [
+						{
+							"shell": "C:\\Windows\\System32\\cmd.exe",
+							"label": "cmd"
+						},
+						{
+							"shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+							"label": "PowerShell"
+						},
+						{
+							"shell": "C:\\Program Files\\Git\\bin\\bash.exe",
+							"label": "Git bash"
+						},
+						{
+							"shell": "C:\\Windows\\System32\\bash.exe",
+							"label": "WSL Bash"
+						}
+					],
+					"items": {
+						"shell": "string",
+						"args": "string[]",
+						"label": "string",
+						"launchName": "string",
+						"cwd": "string",
+						"env": "string[]"
+					}
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run build",
+		"watch": "tsc -watch -p ./",
+		"build": "tsc -p ./",
+		"test": "mocha ./out/**/*.test.js",
+		"lint": "tslint 'src/**/*.ts'"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.48",
+		"@types/node": "10",
+		"@types/vscode": "1.39",
+		"mocha": "^5.2.0",
+		"tslint": "^5.20.1",
+		"tslint-consistent-codestyle": "^1.16.0",
+		"typescript": "3.7"
+	},
+	"__metadata": {
+		"id": "76e37267-9f32-4816-b6c8-47a3928b94c9",
+		"publisherId": "738ff3bb-8e77-45d5-bd26-7c9ad62959b9",
+		"publisherDisplayName": "Daniel Imms",
+		"installedTimestamp": 1628965287178
+	}
+}

@@ -1,0 +1,159 @@
+{
+	"name": "august-themes",
+	"displayName": "August Themes",
+	"description": "‧ ˙ᕀ ✧ᱸ༝ ‧ Dark Visual Studio Code themes made even darker and perfect ‧ ˙ᕀ ✧ᱸ༝ ‧",
+	"version": "2.2.3",
+	"publisher": "inci-august",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/inci-august/august-themes"
+	},
+	"icon": "night.png",
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keyword": [
+		"Theme",
+		"Dark Theme",
+		"Black Theme",
+		"Arstotzka Theme",
+		"City Lights Theme",
+		"Duotone Theme",
+		"Drawbridge Theme",
+		"Gruvbox Theme",
+		"Night Owl Theme",
+		"Nord Theme",
+		"Papers, Please Theme",
+		"Radical Theme",
+		"In Bed By 7pm"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "August - Arstotzka",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-arstotzka.json"
+			},
+			{
+				"label": "August - Arstotzka (Lighter)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-arstotzka-lighter.json"
+			},
+			{
+				"label": "August - Arstotzka (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-arstotzka-darker.json"
+			},
+			{
+				"label": "August - Arstotzka 2",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-arstotzka-2.json"
+			},
+			{
+				"label": "August - Arstotzka 2 (Lighter)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-arstotzka-2-lighter.json"
+			},
+			{
+				"label": "August - Arstotzka 2 (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-arstotzka-2-darker.json"
+			},
+			{
+				"label": "August - Ariake Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-ariake-dark.json"
+			},
+			{
+				"label": "August - Nord",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-nord.json"
+			},
+			{
+				"label": "August - Nord (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-nord-darker.json"
+			},
+			{
+				"label": "August - City Lights",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-city-lights.json"
+			},
+			{
+				"label": "August - City Lights (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-city-lights-darker.json"
+			},
+			{
+				"label": "August - Night Owl",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-night-owl.json"
+			},
+			{
+				"label": "August - Night Owl (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-night-owl-darker.json"
+			},
+			{
+				"label": "August - In Bed By 7pm",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-in-bed-by-7pm.json"
+			},
+			{
+				"label": "August - In Bed By 7pm (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-in-bed-by-7pm-darker.json"
+			},
+			{
+				"label": "August - Radical",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-radical.json"
+			},
+			{
+				"label": "August - Radical 2",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-radical-2.json"
+			},
+			{
+				"label": "August - Drawbridge",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-drawbridge.json"
+			},
+			{
+				"label": "August - Drawbridge (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-drawbridge-darker.json"
+			},
+			{
+				"label": "August - Material Palenight",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-material-palenight.json"
+			},
+			{
+				"label": "August - Material Ocean",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-material-ocean.json"
+			},
+			{
+				"label": "August - Gruvbox",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-gruvbox.json"
+			},
+			{
+				"label": "August - Gruvbox (Darker)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/august-gruvbox-darker.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "48ae7c99-20a7-46e2-ad55-bb870d763998",
+		"publisherId": "eb80123e-2df6-43f1-98a0-cc4e724d1735",
+		"publisherDisplayName": "inci-august",
+		"installedTimestamp": 1628964990476
+	}
+}

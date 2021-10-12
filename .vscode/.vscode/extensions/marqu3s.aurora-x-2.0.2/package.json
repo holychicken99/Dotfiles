@@ -1,0 +1,44 @@
+{
+	"name": "aurora-x",
+	"displayName": "Aurora X",
+	"description": "Minimalistic looking based on Material Theme",
+	"icon": "images/icon.png",
+	"version": "2.0.2",
+	"publisher": "marqu3s",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Aurora X",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Aurora X-color-theme.json"
+			}
+		]
+	},
+	"keywords": [
+		"aurora",
+		"dark",
+		"material",
+		"theme",
+		"flat"
+	],
+	"license": "MIT",
+	"maintainers": [
+		"Alvaro Marques <marquesramosalvaro@icloud.com>"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marqu3s10/Aurora-X.git"
+	},
+	"__metadata": {
+		"id": "18a6a2e3-76ca-4c85-9175-9d62229194dc",
+		"publisherId": "36ec04b7-5187-4ae5-b308-dc8f0cf32edf",
+		"publisherDisplayName": "marqu3s",
+		"installedTimestamp": 1628965292103
+	}
+}

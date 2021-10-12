@@ -1,0 +1,45 @@
+{
+	"name": "flask-snippets",
+	"displayName": "flask-snippets",
+	"description": "Flask snippets",
+	"version": "0.1.2",
+	"publisher": "cstrap",
+	"icon": "images/flask.png",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"snippets",
+		"flask",
+		"python"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cstrap/flask-snippets.git"
+	},
+	"contributes": {
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/base.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/controls.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/templates.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "059992b6-f77c-4828-817c-1397b29cdeec",
+		"publisherId": "4d143213-5bf4-4150-92ba-8281dbc0dd55",
+		"publisherDisplayName": "cstrap",
+		"installedTimestamp": 1629863422332
+	}
+}

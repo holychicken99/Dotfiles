@@ -1,0 +1,509 @@
+{
+	"name": "luahelper",
+	"displayName": "Lua Helper",
+	"description": "Intellisense, Linting, Debugging, Code formatting, High-performance, and more.",
+	"version": "0.1.58",
+	"publisher": "yinfei",
+	"author": {
+		"name": "yinfei",
+		"email": "313745207@qq.com"
+	},
+	"license": "BSD-3-Clause",
+	"keywords": [
+		"lua",
+		"lua helper",
+		"luahelper",
+		"lua help",
+		"luahelp",
+		"lua debug",
+		"luadebug",
+		"lua check",
+		"luacheck",
+		"lua format",
+		"luaformat",
+		"emmylua"
+	],
+	"icon": "images/luahelper.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yinfei8/LuaHelper.git"
+	},
+	"bugs": {
+		"url": "https://github.com/yinfei8/LuaHelper.git"
+	},
+	"engines": {
+		"vscode": "^1.53.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Linters",
+		"Debuggers",
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:lua",
+		"onWebviewPanel:lua-doc",
+		"onCommand:extension.lua.doc",
+		"onDebug"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "LuaHelper.copyDebugFile",
+				"title": "LuaHelper: Copy debug file"
+			},
+			{
+				"command": "LuaHelper.copyLuaSocket",
+				"title": "LuaHelper: Copy Lua Socket Lib"
+			},
+			{
+				"command": "LuaHelper.insertDebugCode",
+				"title": "LuaHelper: Insert Debugger Code"
+			},
+			{
+				"command": "LuaHelper.openDebugFolder",
+				"title": "LuaHelper: Open Debug Folder"
+			},
+			{
+				"command": "LuaHelper.setFormatConfig",
+				"title": "LuaHelper: Set Format Config"
+			}
+		],
+		"snippets": [
+			{
+				"language": "lua",
+				"path": "./snippets/snippets.json"
+			}
+		],
+		"languages": [
+			{
+				"id": "lua",
+				"extensions": [
+					".lua"
+				],
+				"aliases": [
+					"Lua"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "lua",
+				"scopeName": "source.lua",
+				"path": "./syntaxes/lua.json"
+			}
+		],
+		"breakpoints": [
+			{
+				"language": "lua"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "LuaHelper-Debug",
+				"label": "LuaHelper: Debug",
+				"program": "./out/debug/debugAdapter.js",
+				"runtime": "node",
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"program": {
+								"type": "string",
+								"description": "随调试器启动的可执行文件路径",
+								"default": ""
+							},
+							"args": {
+								"type": "array",
+								"description": "program 执行时需要的参数, 结构是一个字符串数组",
+								"default": []
+							},
+							"trace": {
+								"type": "boolean",
+								"description": "Enable logging of the Debug Adapter Protocol.",
+								"default": false
+							},
+							"stopOnEntry": {
+								"type": "boolean",
+								"description": "调试器启动后自动停止在调用的第一行代码处",
+								"default": true
+							},
+							"cwd": {
+								"type": "string",
+								"description": "exactltPathMode : 拼接路径 | autoPathMode : workspace 路径",
+								"default": "${workspaceFolder}"
+							},
+							"isNeedB64EncodeStr": {
+								"type": "boolean",
+								"description": "是否使用base64编码传输字符串，默认请开启。",
+								"default": true
+							},
+							"luaFileExtension": {
+								"type": "string",
+								"description": "Lua文件后缀",
+								"default": ""
+							},
+							"pathCaseSensitivity": {
+								"type": "boolean",
+								"description": "文件路径大小写敏感, 默认true",
+								"default": true
+							},
+							"connectionPort": {
+								"type": "number",
+								"description": "设置连接的端口号，默认8818",
+								"default": 8818
+							},
+							"autoReconnect": {
+								"type": "boolean",
+								"description": "当连接被lua端断开时，VSCode自动等待重连",
+								"default": true
+							},
+							"TempFilePath": {
+								"type": "string",
+								"description": "调试产生的临时文件存放路径，请确保文件夹存在",
+								"default": "${workspaceFolder}"
+							},
+							"logLevel": {
+								"type": "number",
+								"description": "日志等级. 0:all所有信息; 1:info仅必要信息(默认); 2:error仅错误",
+								"default": 1
+							},
+							"useCHook": {
+								"type": "boolean",
+								"description": "使用C Hook模块, 提高运行效率。默认true。设置为false则使用 lua hook 调试",
+								"default": true
+							},
+							"packagePath": {
+								"type": "array",
+								"description": "数组中的路径在运行时会加入package.path. 如 /Script/?.lua ",
+								"default": []
+							},
+							"luaPath": {
+								"type": "string",
+								"description": "lua命令的路径和文件名. 如 C:/lua5.3/lua.exe ",
+								"default": ""
+							},
+							"docPathReplace": {
+								"type": "array",
+								"description": "被调试文件和VSCode中加载文件路径不一致时，通过此项设置，完成路径替换。输入格式[\"被替换掉的路径\", \"新路径\"]",
+								"default": []
+							},
+							"autoPathMode": {
+								"type": "boolean",
+								"description": "是否使用自动路径模式",
+								"default": true
+							},
+							"updateTips": {
+								"type": "boolean",
+								"description": "是否打开 LuaPanda 自动升级提示",
+								"default": true
+							}
+						}
+					}
+				},
+				"initialConfigurations": [
+					{
+						"type": "LuaHelper-Debug",
+						"request": "launch",
+						"name": "LuaHelper-Attach",
+						"program": "",
+						"cwd": "${workspaceFolder}",
+						"luaFileExtension": "",
+						"connectionPort": 8818,
+						"pathCaseSensitivity": true,
+						"stopOnEntry": true,
+						"useCHook": true,
+						"autoPathMode": true,
+						"logLevel": 1
+					},
+					{
+						"type": "LuaHelper-Debug",
+						"request": "launch",
+						"name": "LuaHelper-DebugFile",
+						"luaPath": "",
+						"packagePath": [],
+						"luaFileExtension": "",
+						"connectionPort": 8818,
+						"stopOnEntry": true,
+						"useCHook": true,
+						"logLevel": 1
+					}
+				],
+				"configurationSnippets": [
+					{
+						"label": "LuaHelper: Attach",
+						"description": "LuaHelper debug attach by socket",
+						"body": {
+							"type": "LuaHelper-Debug",
+							"request": "launch",
+							"name": "LuaHelper-Attach",
+							"luaPath": "",
+							"packagePath": [],
+							"luaFileExtension": "",
+							"connectionPort": 8818,
+							"stopOnEntry": true,
+							"useCHook": true,
+							"logLevel": 1
+						}
+					},
+					{
+						"label": "LuaHelper: Debug File",
+						"description": "LuaHelper debug only file",
+						"body": {
+							"type": "LuaHelper-Debug",
+							"request": "launch",
+							"name": "LuaHelper-DebugFile",
+							"luaPath": "",
+							"packagePath": [],
+							"luaFileExtension": "",
+							"connectionPort": 8818,
+							"stopOnEntry": true,
+							"useCHook": true,
+							"logLevel": 1
+						}
+					}
+				]
+			}
+		],
+		"configuration": {
+			"title": "Lua Helper",
+			"properties": {
+				"luahelper.project.rootdir": {
+					"type": "string",
+					"default": "./",
+					"description": "%luahelper.source.rootdir%"
+				},
+				"luahelper.project.lsp": {
+					"type": "string",
+					"default": "cmd rpc",
+					"enum": [
+						"cmd rpc",
+						"socket rpc"
+					],
+					"description": "%luahelper.run.lsp%",
+					"enumDescriptions": [
+						"%luahelper.run.cmdrpc%",
+						"%luahelper.run.socketrpc%"
+					]
+				},
+				"luahelper.reference.maxNum": {
+					"default": 3000,
+					"scope": "resource",
+					"type": "integer",
+					"description": "%luahelper.reference.maxNum%"
+				},
+				"luahelper.show.online": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.show.online%"
+				},
+				"luahelper.show.costTime": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.show.costTime%"
+				},
+				"luahelper.reference.incudeDefine": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.reference.incudeDefine%"
+				},
+				"luahelper.format.errShow": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.format.errShow%"
+				},
+				"luahelper.lspserver.log": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.lspserver.log%"
+				},
+				"luahelper.colors.Enable": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.colors.Enable%"
+				},
+				"luahelper.colors.Global Field Color": {
+					"type": "string",
+					"default": "#ee9d28",
+					"description": "%luahelper.colors.globalfield%"
+				},
+				"luahelper.colors.Global Fun Color": {
+					"type": "string",
+					"default": "#ee9d28",
+					"description": "%luahelper.colors.globalfun%"
+				},
+				"luahelper.colors.Type(annotation) Color": {
+					"type": "string",
+					"default": "#569CD6",
+					"description": "%luahelper.colors.annotatetype%"
+				},
+				"luahelper.Warn.AllEnable": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.AllEnable%"
+				},
+				"luahelper.Warn.CheckSyntax": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckSyntax%"
+				},
+				"luahelper.Warn.CheckNoDefine": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckNoDefine%"
+				},
+				"luahelper.Warn.CheckAfterDefine": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckAfterDefine%"
+				},
+				"luahelper.Warn.CheckLocalNoUse": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckLocalNoUse%"
+				},
+				"luahelper.Warn.CheckTableDuplicateKey": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckTableDuplicateKey%"
+				},
+				"luahelper.Warn.CheckReferNoFile": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckReferNoFile%"
+				},
+				"luahelper.Warn.CheckAssignParamNum": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckAssignParamNum%"
+				},
+				"luahelper.Warn.CheckLocalDefineParamNum": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckLocalDefineParamNum%"
+				},
+				"luahelper.Warn.CheckGotoLable": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckGotoLable%"
+				},
+				"luahelper.Warn.CheckFuncParam": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckFuncParam%"
+				},
+				"luahelper.Warn.CheckImportModuleVar": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckImportModuleVar%"
+				},
+				"luahelper.Warn.CheckIfNotVar": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckIfNotVar%"
+				},
+				"luahelper.Warn.CheckFunctionDuplicateParam": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckFunctionDuplicateParam%"
+				},
+				"luahelper.Warn.CheckBinaryExpressionDuplicate": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckBinaryExpressionDuplicate%"
+				},
+				"luahelper.Warn.CheckErrorOrAlwaysTrue": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckErrorOrAlwaysTrue%"
+				},
+				"luahelper.Warn.CheckErrorAndAlwaysFalse": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckErrorAndAlwaysFalse%"
+				},
+				"luahelper.Warn.CheckNoUseAssign": {
+					"default": false,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckNoUseAssign%"
+				},
+				"luahelper.Warn.CheckAnnotateType": {
+					"default": true,
+					"scope": "resource",
+					"type": "boolean",
+					"description": "%luahelper.Warn.CheckAnnotateType%"
+				}
+			}
+		},
+		"configurationDefaults": {
+			"[lua]": {
+				"editor.quickSuggestions": {
+					"other": true,
+					"comments": true,
+					"strings": true
+				},
+				"editor.tabCompletion": "on",
+				"editor.quickSuggestionsDelay": 1
+			}
+		},
+		"colors": []
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package",
+		"publish": "vsce package"
+	},
+	"devDependencies": {
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.1",
+		"@types/vscode": "^1.53.0",
+		"filecopy": "^4.0.2",
+		"tslint": "^5.8.0",
+		"typescript": "^4.3.5"
+	},
+	"dependencies": {
+		"await-notify": "1.0.1",
+		"client": "0.0.1",
+		"iconv-lite": "^0.5.0",
+		"path-reader": "^1.1.0",
+		"smart-buffer": "^4.0.1",
+		"vsce": "^1.95.0",
+		"vscode-debugadapter": "1.31.0",
+		"vscode-debugprotocol": "1.31.0",
+		"vscode-languageclient": "^7.1.0-next.4"
+	},
+	"__metadata": {
+		"id": "d3707c86-e17d-4f81-ae03-bbfae896128b",
+		"publisherId": "96e46664-7420-4d07-b29f-fc6074815ac5",
+		"publisherDisplayName": "yinfei",
+		"installedTimestamp": 1630068782857
+	}
+}

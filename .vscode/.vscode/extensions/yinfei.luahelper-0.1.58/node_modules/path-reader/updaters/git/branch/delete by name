@@ -1,0 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../../
+echo -n "Enter branch name to DELETE [ENTER]: "
+read name
+git branch -D "$name"
+bash

@@ -1,0 +1,68 @@
+{
+	"name": "theme-dracula-at-night",
+	"version": "2.7.0",
+	"displayName": "Dracula At Night",
+	"description": "Dracula At Night — A Dracula fork, with a darker flavor",
+	"publisher": "bceskavich",
+	"license": "MIT",
+	"scripts": {
+		"clean": "rm -rf build",
+		"compile": "yarn run clean && tsc",
+		"build": "mkdir -p ./theme && ts-node ./src/build.ts",
+		"attach": "./bootstrap.sh attach",
+		"eject": "./bootstrap.sh eject",
+		"dev": "yarn run eject && yarn run build && yarn run attach",
+		"vscode:prepublish": "yarn run build",
+		"format": "prettier --write 'src/**/*.ts'"
+	},
+	"maintainers": [
+		"Billy Ceskavich <bceskavich@gmail.com>"
+	],
+	"contributors": [],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bceskavich/dracula-at-night.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bceskavich/dracula-at-night/issues"
+	},
+	"engines": {
+		"vscode": "^1.13.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"dracula",
+		"dark",
+		"theme",
+		"color-theme"
+	],
+	"icon": "dracula-at-night.png",
+	"galleryBanner": {
+		"color": "#0e1419",
+		"theme": "dark"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Dracula At Night",
+				"uiTheme": "vs-dark",
+				"path": "./theme/dracula-at-night.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@types/node": "^10.5.8",
+		"ts-node": "^7.0.0",
+		"tslint": "^5.11.0",
+		"tslint-config-prettier": "^1.14.0",
+		"typescript": "^3.0.1"
+	},
+	"__metadata": {
+		"id": "86fa6593-3f3e-484c-b7cd-00ba7c91c23f",
+		"publisherId": "72f2d502-2860-40d3-8a46-47cbf8a5d495",
+		"publisherDisplayName": "bceskavich",
+		"installedTimestamp": 1631013832745
+	}
+}

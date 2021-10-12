@@ -1,0 +1,13 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../
+echo -n "NPM package name [ENTER]: "
+read name
+
+echo ""
+echo "npm install $name@beta --save"
+echo ""
+
+npm install "$name"@beta --save
+
+bash

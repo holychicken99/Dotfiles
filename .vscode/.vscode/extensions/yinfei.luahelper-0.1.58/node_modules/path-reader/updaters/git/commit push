@@ -1,0 +1,11 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../
+git pull --ff-only
+git status
+echo -n "Enter your commit comment [ENTER]: "
+read name
+git add --all
+git commit -m "$name"
+git push
+bash

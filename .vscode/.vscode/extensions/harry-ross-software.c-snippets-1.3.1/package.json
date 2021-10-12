@@ -1,0 +1,58 @@
+{
+	"name": "c-snippets",
+	"displayName": "C Snippets",
+	"description": "Snippets for the C programming language",
+	"version": "1.3.1",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.44.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Harry-Ross/vscode-c-snippets"
+	},
+	"publisher": "Harry-Ross-Software",
+	"icon": "c_logo.png",
+	"categories": [
+		"Snippets",
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.helloWorld"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello world"
+			}
+		],
+		"snippets": [
+			{
+				"language": "c",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^10.17.49",
+		"tslint": "^5.20.1",
+		"typescript": "^3.9.7",
+		"vscode": "^1.1.37"
+	},
+	"__metadata": {
+		"id": "abc71263-9aab-4c98-8dc6-f87247c08908",
+		"publisherId": "9fd87e5d-4beb-4d1f-8dbb-754d1bae8ea7",
+		"publisherDisplayName": "Harry Ross Software",
+		"installedTimestamp": 1628964988449
+	}
+}

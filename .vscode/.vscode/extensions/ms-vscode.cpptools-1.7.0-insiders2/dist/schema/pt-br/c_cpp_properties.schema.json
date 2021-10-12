@@ -1,0 +1,263 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"definitions": {
+		"configurations": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [
+					"name"
+				],
+				"properties": {
+					"name": {
+						"markdownDescription": "Configuration identifier. `Mac`, `Linux`, and `Win32` are special identifiers for configurations that will be auto-selected on those platforms, but the identifier can be anything.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "string",
+						"description": "Identificador de configuração. `Mac`,` Linux` e `Win32` são identificadores especiais para configurações que serão selecionadas automaticamente nessas plataformas, mas o identificador pode ser qualquer coisa."
+					},
+					"compilerPath": {
+						"markdownDescription": "Full path of the compiler being used, e.g. `/usr/bin/gcc`, to enable more accurate IntelliSense.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "string",
+						"description": "Caminho completo do compilador usado, por exemplo, `/usr/bin/gcc`, para habilitar um IntelliSense mais preciso."
+					},
+					"compilerArgs": {
+						"markdownDescription": "Compiler arguments to modify the includes or defines used, e.g. `-nostdinc++`, `-m32`, etc.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "Argumentos do compilador para modificar as inclusões ou definições usadas, por exemplo, `-nostdinc++`, `-m32`, etc."
+					},
+					"cStandard": {
+						"description": "Versão do padrão da linguagem C a ser usada para o IntelliSense. Observação: os padrões GNU são usados apenas para consultar o compilador de conjunto para obter definições GNU e o IntelliSense emulará a versão padrão do C equivalente.",
+						"type": "string",
+						"enum": [
+							"c89",
+							"c99",
+							"c11",
+							"c17",
+							"gnu89",
+							"gnu99",
+							"gnu11",
+							"gnu17",
+							"${default}"
+						]
+					},
+					"cppStandard": {
+						"description": "Versão do padrão da linguagem C++ a ser usada para o IntelliSense. Observação: os padrões GNU são usados apenas para consultar o compilador de conjunto para obter definições de GNU e o IntelliSense emulará a versão do C++ padrão equivalente.",
+						"type": "string",
+						"enum": [
+							"c++98",
+							"c++03",
+							"c++11",
+							"c++14",
+							"c++17",
+							"c++20",
+							"gnu++98",
+							"gnu++03",
+							"gnu++11",
+							"gnu++14",
+							"gnu++17",
+							"gnu++20",
+							"${default}"
+						]
+					},
+					"compileCommands": {
+						"markdownDescription": "Full path to `compile_commands.json` file for the workspace.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "string",
+						"description": "Caminho completo para o arquivo `compile_commands.json` para o espaço de trabalho."
+					},
+					"includePath": {
+						"markdownDescription": "A list of paths for the IntelliSense engine to use while searching for included headers. Searching on these paths is not recursive. Specify `**` to indicate recursive search. For example, `${workspaceFolder}/**` will search through all subdirectories while `${workspaceFolder}` will not. Usually, this should not include system includes; instead, set `C_Cpp.default.compilerPath`.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "Uma lista de caminhos para o mecanismo IntelliSense usar ao pesquisar cabeçalhos incluídos. A pesquisa nesses caminhos não é recursiva. Especifique `**` para indicar pesquisa recursiva. Por exemplo, `${workspaceFolder}/**` irá pesquisar em todos os subdiretórios enquanto `${workspaceFolder}` não irá. Normalmente, isso não deve incluir inclusões de sistema; em vez disso, defina `#C_Cpp.default.compilerPath#`."
+					},
+					"macFrameworkPath": {
+						"description": "Uma lista de caminhos para o mecanismo IntelliSense usar durante a pesquisa de cabeçalhos incluídos por meio das estruturas Mac. Compatível somente com configurações do Mac.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"windowsSdkVersion": {
+						"markdownDescription": "Version of the Windows SDK include path to use on Windows, e.g. `10.0.17134.0`.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "string",
+						"pattern": "^\\d{2}\\.\\d{1}\\.\\d{5}\\.\\d{1}$|^8\\.1$",
+						"description": "A versão do SDK do Windows inclui o caminho a ser usado no Windows, por exemplo, `10.0.17134.0`."
+					},
+					"defines": {
+						"markdownDescription": "A list of preprocessor definitions for the IntelliSense engine to use while parsing files. Optionally, use `=` to set a value, e.g. `VERSION=1`.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"description": "Uma lista de definições de pré-processador para o mecanismo IntelliSense usar durante a análise de arquivos. Opcionalmente, use `=` para definir um valor, por exemplo `VERSÃO=1`."
+					},
+					"intelliSenseMode": {
+						"markdownDescription": "The IntelliSense mode to use that maps to a platform and architecture variant of MSVC, gcc, or Clang. If not set or if set to `${default}`, the extension will choose the default for that platform. Windows defaults to `windows-msvc-x64`, Linux defaults to `linux-gcc-x64`, and macOS defaults to `macos-clang-x64`. IntelliSense modes that only specify `<compiler>-<architecture>` variants (e.g. `gcc-x64`) are legacy modes and are converted automatically to the `<platform>-<compiler>-<architecture>` variants based on the host platform.",
+						"descriptionHint": "Uses of words 'platform', 'compiler', and 'architecture' are meant to be descriptive placeholders for literal values, so they should be translated, but without changing the surrounding `<>-<>` symbols. All other text inside `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"type": "string",
+						"enum": [
+							"macos-clang-x86",
+							"macos-clang-x64",
+							"macos-clang-arm",
+							"macos-clang-arm64",
+							"macos-gcc-x86",
+							"macos-gcc-x64",
+							"macos-gcc-arm",
+							"macos-gcc-arm64",
+							"linux-clang-x86",
+							"linux-clang-x64",
+							"linux-clang-arm",
+							"linux-clang-arm64",
+							"linux-gcc-x86",
+							"linux-gcc-x64",
+							"linux-gcc-arm",
+							"linux-gcc-arm64",
+							"windows-clang-x86",
+							"windows-clang-x64",
+							"windows-clang-arm",
+							"windows-clang-arm64",
+							"windows-gcc-x86",
+							"windows-gcc-x64",
+							"windows-gcc-arm",
+							"windows-gcc-arm64",
+							"windows-msvc-x86",
+							"windows-msvc-x64",
+							"windows-msvc-arm",
+							"windows-msvc-arm64",
+							"clang-x86",
+							"clang-x64",
+							"clang-arm",
+							"clang-arm64",
+							"gcc-x86",
+							"gcc-x64",
+							"gcc-arm",
+							"gcc-arm64",
+							"msvc-x86",
+							"msvc-x64",
+							"msvc-arm",
+							"msvc-arm64",
+							"${default}"
+						],
+						"description": "O modo IntelliSense para usar esse mapeamento para uma plataforma e variante de arquitetura do MSVC, gcc ou Clang. Se não for definido ou se for definido como `${default}`, a extensão irá escolher o padrão para aquela plataforma. O padrão do Windows é `windows-msvc-x64`, o padrão do Linux é` linux-gcc-x64`, e o padrão do macOS é `macos-clang-x64`. Os modos IntelliSense que especificam apenas variantes `<compiler>-<architecture>` (por exemplo, `gcc-x64`) são modos legados e são convertidos automaticamente para as variantes`<platform>-<compiler>-<architecture>`com base no host plataforma."
+					},
+					"forcedInclude": {
+						"description": "Uma lista de arquivos que devem ser incluídos antes de qualquer arquivo de inclusão em uma unidade de tradução.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"configurationProvider": {
+						"description": "A ID de uma extensão do VS Code que pode fornecer informações de configuração do IntelliSense para arquivos de origem.",
+						"type": "string"
+					},
+					"browse": {
+						"type": "object",
+						"properties": {
+							"limitSymbolsToIncludedHeaders": {
+								"markdownDescription": "Set to `true` to process only those files directly or indirectly included as headers. Set to `false` to process all files under the specified include paths.",
+								"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+								"type": [
+									"boolean",
+									"string"
+								],
+								"description": "`true` para processar apenas os arquivos direta ou indiretamente incluídos como cabeçalhos,` false` para processar todos os arquivos nos caminhos de inclusão especificados."
+							},
+							"databaseFilename": {
+								"description": "Caminho para o banco de dados de símbolo gerado. Se um caminho relativo for especificado, ele será criado em relação ao local de armazenamento padrão do workspace.",
+								"type": "string"
+							},
+							"path": {
+								"markdownDescription": "A list of paths to use for indexing and parsing of workspace symbols (for use by 'Go to Definition', 'Find All References', etc.). Searching on these paths is recursive by default. Specify `*` to indicate non-recursive search. For example, `${workspaceFolder}` will search through all subdirectories while `${workspaceFolder}/*` will not.",
+								"descriptionHint": "Text in '' is a command and should be translated in the same way that VS Code itself translates it. Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"description": "Uma lista de caminhos a serem usados ​​para indexação e análise de símbolos do espaço de trabalho (para uso por 'Ir para a definição', 'Localizar Tudo todas as referências', etc.). A pesquisa nesses caminhos é recursiva por padrão. Especifique `*` para indicar pesquisa não recursiva. Por exemplo, `${workspaceFolder}` irá pesquisar em todos os subdiretórios enquanto `${workspaceFolder}/*` não irá."
+							}
+						},
+						"additionalProperties": false
+					},
+					"customConfigurationVariables": {
+						"type": "object",
+						"markdownDescription": "Custom variables that can be queried through the command `${cpptools:activeConfigCustomVariable}` to use for the input variables in `launch.json` or `tasks.json`.",
+						"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+						"patternProperties": {
+							"(^.+$)": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false,
+						"description": "Variáveis ​​personalizadas que podem ser consultadas através do comando `${cpptools: activeConfigCustomVariable}` para usar para as variáveis ​​de entrada em `launch.json` ou` tasks.json`."
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"env": {
+			"type": "object",
+			"markdownDescription": "Custom variables that can be reused anywhere in this file using the `${variable}` or `${env:variable}` syntax.",
+			"descriptionHint": "The word 'variable' within curly braces should be translated. The \"env\" should not be translated, and the capitalization, spacing, and punctuation (\"${:}\", including the ``) should be preserved.",
+			"patternProperties": {
+				"(?!^workspaceFolder$)(?!^workspaceRoot$)(?!^workspaceFolderBasename$)(?!^execPath$)(?!^pathSeparator$)(?!^default$)(^.+$)": {
+					"oneOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				}
+			},
+			"additionalProperties": false,
+			"description": "Variáveis ​​personalizadas que podem ser reutilizadas em qualquer lugar neste arquivo usando a sintaxe `${variável}` ou `${env:variável}`."
+		},
+		"version": {
+			"type": "integer",
+			"description": "Versão do arquivo de configuração. Esta propriedade é gerenciada pela extensão. Não a altere."
+		},
+		"enableConfigurationSquiggles": {
+			"type": "boolean",
+			"default": true,
+			"markdownDescription": "Controls whether the extension will report errors detected in `c_cpp_properties.json`.",
+			"descriptionHint": "Markdown text between `` should not be translated or localized (they represent literal text) and the capitalization, spacing, and punctuation (including the ``) should not be altered.",
+			"description": "Controla se a extensão reportará erros detectados em `c_cpp_properties.json`."
+		}
+	},
+	"properties": {
+		"configurations": {
+			"$ref": "#/definitions/configurations"
+		},
+		"env": {
+			"$ref": "#/definitions/env"
+		},
+		"version": {
+			"$ref": "#/definitions/version"
+		},
+		"enableConfigurationSquiggles": {
+			"$ref": "#/definitions/enableConfigurationSquiggles"
+		}
+	},
+	"required": [
+		"configurations",
+		"version"
+	],
+	"additionalProperties": false
+}

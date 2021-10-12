@@ -1,0 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../
+echo -n "Enter app name [ENTER]: "
+read name
+mvn archetype:generate -DgroupId=com.$name.app -DartifactId=$name -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+bash

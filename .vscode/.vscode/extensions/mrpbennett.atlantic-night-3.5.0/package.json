@@ -1,0 +1,53 @@
+{
+	"name": "atlantic-night",
+	"displayName": "Atlantic Night",
+	"description": "VSC theme inspired by the deep blues of the Atlantic",
+	"version": "3.5.0",
+	"publisher": "mrpbennett",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mrpbennett/atlantic-night-vscode-theme"
+	},
+	"keywords": [
+		"Theme",
+		"Dark Theme",
+		"Atlantic",
+		"Blue Theme"
+	],
+	"scripts": {
+		"publish-minor": "vsce publish minor",
+		"publish-major": "vsce publish major"
+	},
+	"galleryBanner": {
+		"color": "#000720",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "wave.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Atlantic Night",
+				"uiTheme": "vs-dark",
+				"path": "./themes/atlantic-night-main-theme.json"
+			},
+			{
+				"label": "Atlantic Night - Abyss",
+				"uiTheme": "vs-dark",
+				"path": "./themes/atlantic-night-abyss-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e0506a7e-406e-4fd1-9eee-d56b2865365a",
+		"publisherId": "ecbb692e-dd2d-4d16-b141-cfa0de7c1984",
+		"publisherDisplayName": "mrpbennett",
+		"installedTimestamp": 1628965299728
+	}
+}

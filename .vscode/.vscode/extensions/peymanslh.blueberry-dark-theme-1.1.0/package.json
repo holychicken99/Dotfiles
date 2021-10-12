@@ -1,0 +1,36 @@
+{
+	"name": "blueberry-dark-theme",
+	"displayName": "Blueberry dark theme",
+	"description": "Blueberry Dark Theme for Visual Studio Code",
+	"version": "1.1.0",
+	"publisher": "peymanslh",
+	"engines": {
+		"vscode": "^1.13.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Blueberry dark theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/blueberry-dark-theme-color-theme.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/peymanslh/vscode-blueberry-dark-theme.git"
+	},
+	"homepage": "https://github.com/peymanslh/vscode-blueberry-dark-theme#readme",
+	"license": "MIT",
+	"author": "Peyman Salehi <peymanslh@pm.me>",
+	"__metadata": {
+		"id": "572868b0-4ce7-4638-b99f-4d3bb61fc898",
+		"publisherId": "ca190afd-cbc5-4cfc-b556-9a31d6cb745e",
+		"publisherDisplayName": "peymanslh",
+		"installedTimestamp": 1628965298517
+	}
+}

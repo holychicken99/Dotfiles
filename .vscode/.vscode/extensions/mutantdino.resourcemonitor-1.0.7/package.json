@@ -1,0 +1,126 @@
+{
+	"name": "resourcemonitor",
+	"displayName": "Resource Monitor",
+	"description": "Displays current CPU stats, memory/disk consumption, and battery percentage remaining.",
+	"version": "1.0.7",
+	"publisher": "mutantdino",
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#C80000",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Resource Monitor Configuration",
+			"properties": {
+				"resmon.show.cpuusage": {
+					"type": "boolean",
+					"default": true,
+					"description": "Toggles the display of CPU Usage."
+				},
+				"resmon.show.cpufreq": {
+					"type": "boolean",
+					"default": true,
+					"description": "Toggles the display of CPU frequency. For Windows, this displays the maximum clock speed."
+				},
+				"resmon.show.mem": {
+					"type": "boolean",
+					"default": true,
+					"description": "Toggles the display of memory consumption."
+				},
+				"resmon.show.battery": {
+					"type": "boolean",
+					"default": true,
+					"description": "Toggles the display of battery percentage remaining if a device with a battery. If the device reports not having a battery, this setting will always be treated as false."
+				},
+				"resmon.show.disk": {
+					"type": "boolean",
+					"default": false,
+					"description": "Toggles the display of disk space information."
+				},
+				"resmon.show.cputemp": {
+					"type": "boolean",
+					"default": false,
+					"description": "Toggles the display of CPU temperature. May require launching VSCode as administrator.."
+				},
+				"resmon.disk.format": {
+					"type": "string",
+					"enum": [
+						"PercentRemaining",
+						"PercentUsed",
+						"Remaining",
+						"UsedOutOfTotal"
+					]
+				},
+				"resmon.disk.drives": {
+					"type": "string[]",
+					"default": []
+				},
+				"resmon.updatefrequencyms": {
+					"type": "number",
+					"default": 2000,
+					"minimum": 200,
+					"description": "How long in ms between updates to resources."
+				},
+				"resmon.freq.unit": {
+					"type": "string",
+					"enum": [
+						"GHz",
+						"MHz",
+						"KHz",
+						"Hz"
+					],
+					"default": "GHz"
+				},
+				"resmon.mem.unit": {
+					"type": "string",
+					"enum": [
+						"GB",
+						"MB",
+						"KB",
+						"B"
+					],
+					"default": "GB"
+				}
+			}
+		}
+	},
+	"repository": {
+		"url": "https://github.com/Njanderson/resmon.git"
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"dependencies": {
+		"systeminformation": "^4.0.0"
+	},
+	"devDependencies": {
+		"systeminformation": "^4.0.0",
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^7.0.43",
+		"tslint": "^5.8.0",
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6"
+	},
+	"__metadata": {
+		"id": "6efd3abb-3c6e-49c8-b8ce-6df58982255b",
+		"publisherId": "276e9948-857d-43c7-bd43-c82aa06603ad",
+		"publisherDisplayName": "mutantdino",
+		"installedTimestamp": 1628965289692
+	}
+}

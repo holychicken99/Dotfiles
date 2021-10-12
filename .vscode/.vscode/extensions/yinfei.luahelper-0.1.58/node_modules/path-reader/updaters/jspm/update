@@ -1,0 +1,6 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "updating jspm"
+jspm update
+echo "jspm update complete!"
+bash

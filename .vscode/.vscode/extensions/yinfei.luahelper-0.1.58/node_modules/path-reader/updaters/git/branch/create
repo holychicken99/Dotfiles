@@ -1,0 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ../../../
+echo -n "Enter branch name to CREATE [ENTER]: "
+read name
+git checkout -b "$name"
+bash
