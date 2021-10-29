@@ -1,6 +1,0 @@
-#!/bin/bash
-cd "$(dirname "$0")"
-cd ../../
-#delete untracked files
-git clean -f
-bash

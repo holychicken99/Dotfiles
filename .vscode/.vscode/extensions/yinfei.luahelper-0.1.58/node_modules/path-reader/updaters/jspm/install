@@ -1,6 +1,0 @@
-#!/bin/bash
-cd "$(dirname "$0")"
-echo "Installing jspm packages listed in package.json key:jspm"
-jspm install
-echo "Done"
-bash

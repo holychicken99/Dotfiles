@@ -1,8 +1,0 @@
-#!/bin/bash
-cd "$(dirname "$0")"
-cd ../../
-git add --all
-echo -n "Enter your commit comment [ENTER]: "
-read name
-git commit -m "$name"
-bash

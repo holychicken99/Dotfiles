@@ -1,6 +1,0 @@
-#!/bin/bash
-cd "$(dirname "$0")"
-echo "Building Release"
-cordova build --release
-echo "Done"
-bash
